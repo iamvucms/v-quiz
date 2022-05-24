@@ -3,7 +3,7 @@ import React from 'react';
 
 const GamePlay = () => {
   return (
-    <View>
+    <View style>
       <Text>GamePlay</Text>
     </View>
   );

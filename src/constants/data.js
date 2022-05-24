@@ -1,9 +1,33 @@
 import {
+  AnimalCareImageSrc,
   AnswerAlphabetImageSrc,
+  BallsSportsImageSrc,
+  BoardGamesImageSrc,
+  BookStackImageSrc,
+  CartoonImageSrc,
+  ComicImageSrc,
+  CreativityImageSrc,
+  DataScienceImageSrc,
+  DeliveryTruckImageSrc,
+  FujiImageSrc,
+  GadgetsImageSrc,
+  GameConsoleImageSrc,
+  GarlandImageSrc,
+  GlobeImageSrc,
+  HephaestusImageSrc,
+  HistoryImageSrc,
   HourGlassImageSrc,
+  KnowledgeImageSrc,
   LightBrainImageSrc,
+  MathematicsImageSrc,
+  MovieImageSrc,
+  MusicImageSrc,
+  OnlineTestImageSrc,
+  PoliticsImageSrc,
+  TelevisionImageSrc,
+  TheatreImageSrc,
 } from '../assets/images';
-
+import RNSound from 'react-native-sound';
 export const OnboardingData = [
   {
     title: 'Welcome to VQuiz!',
@@ -57,3 +81,135 @@ export const Subscriptions = [
     savePercent: 30,
   },
 ];
+export const Categories = [
+  {
+    name: 'General Knowledge',
+    id: 9,
+    image: KnowledgeImageSrc,
+  },
+  {
+    name: 'Books',
+    id: 10,
+    image: BookStackImageSrc,
+  },
+  {
+    name: 'Film',
+    id: 11,
+    image: MovieImageSrc,
+  },
+  {
+    name: 'Music',
+    id: 12,
+    image: MusicImageSrc,
+  },
+  {
+    name: 'Musicals & Theatres',
+    id: 13,
+    image: TheatreImageSrc,
+  },
+  {
+    name: 'Television',
+    id: 14,
+    image: TelevisionImageSrc,
+  },
+  {
+    name: 'Video Games',
+    id: 15,
+    image: GameConsoleImageSrc,
+  },
+  {
+    name: 'Board Games',
+    id: 16,
+    image: BoardGamesImageSrc,
+  },
+  {
+    name: 'Science & Nature',
+    id: 17,
+    image: DataScienceImageSrc,
+  },
+  {
+    name: 'Computers',
+    id: 18,
+    image: OnlineTestImageSrc,
+  },
+  {
+    name: 'Mathematics',
+    id: 19,
+    image: MathematicsImageSrc,
+  },
+  {
+    name: 'Mythology',
+    id: 20,
+    image: HephaestusImageSrc,
+  },
+  {
+    name: 'Sports',
+    id: 21,
+    image: BallsSportsImageSrc,
+  },
+  {
+    name: 'Geography',
+    id: 22,
+    image: GlobeImageSrc,
+  },
+  {
+    name: 'History',
+    id: 23,
+    image: HistoryImageSrc,
+  },
+  {
+    name: 'Politics',
+    id: 24,
+    image: PoliticsImageSrc,
+  },
+  {
+    name: 'Art',
+    id: 25,
+    image: CreativityImageSrc,
+  },
+  {
+    name: 'Celebrities',
+    id: 26,
+    image: GarlandImageSrc,
+  },
+  {
+    name: 'Animals',
+    id: 27,
+    image: AnimalCareImageSrc,
+  },
+  {
+    name: 'Vehicles',
+    id: 28,
+    image: DeliveryTruckImageSrc,
+  },
+  {
+    name: 'Comics',
+    id: 29,
+    image: ComicImageSrc,
+  },
+  {
+    name: 'Gadgets',
+    id: 30,
+    image: GadgetsImageSrc,
+  },
+  {
+    name: 'Anime & Manga',
+    id: 31,
+    image: FujiImageSrc,
+  },
+  {
+    name: 'Cartoon & Animations',
+    id: 32,
+    image: CartoonImageSrc,
+  },
+];
+export const clickSound = new RNSound(
+  'clicky.wav',
+  RNSound.MAIN_BUNDLE,
+  err => {
+    if (err) {
+      console.log(err);
+      return;
+    }
+  },
+);

@@ -2,6 +2,7 @@ import {action, makeObservable, observable} from 'mobx';
 import {AsyncTrunk} from 'mobx-sync';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {ignorePersistNodes} from './constants';
+import {clickSound} from './constants/data';
 class AppStore {
   premium = false;
   onboardingComplete = false;
@@ -9,6 +10,9 @@ class AppStore {
   subscriptionModalData = {};
   confirmModal = false;
   confirmModalData = {};
+  soundVolume = 100;
+  numOfQuestions = 10;
+  questionType = 'multiple';
   constructor() {
     ignorePersistNodes(this, [
       'subscriptionModal',
@@ -23,10 +27,16 @@ class AppStore {
       subscriptionModalData: observable,
       confirmModal: observable,
       confirmModalData: observable,
+      numOfQuestions: observable,
+      soundVolume: observable,
+      questionType: observable,
       setPremium: action,
       setOnboardingComplete: action,
       setSubscriptionModal: action,
       setConfirmModal: action,
+      setSoundVolume: action,
+      setNumOfQuestions: action,
+      setQuestionType: action,
     });
   }
   setPremium(premium) {
@@ -52,6 +62,20 @@ class AppStore {
         this.setConfirmModal(false);
       };
     }
+  }
+  setSoundVolume(soundVolume) {
+    if (clickSound && typeof soundVolume[0] === 'number') {
+      clickSound.setVolume(soundVolume[0] / 100);
+    }
+    this.soundVolume = soundVolume[0];
+  }
+  setNumOfQuestions(numOfQuestions) {
+    if (this.premium) {
+      this.numOfQuestions = numOfQuestions;
+    }
+  }
+  setQuestionType(questionType) {
+    this.questionType = questionType;
   }
 }
 export default appStore = new AppStore();

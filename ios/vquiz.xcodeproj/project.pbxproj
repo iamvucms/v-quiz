@@ -18,6 +18,7 @@
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		88E2929487944B3CAB364A83 /* BioRhyme-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 902989E8A68C4412BD4ACBEC /* BioRhyme-Light.ttf */; };
 		AA98B8483C7F4A929904F2D8 /* BioRhyme-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E28087066E0B4D5E8AC1C75D /* BioRhyme-Bold.ttf */; };
+		B8CD4663283D492A0001A54D /* clicky.wav in Resources */ = {isa = PBXBuildFile; fileRef = B8CD4662283D492A0001A54D /* clicky.wav */; };
 		FFE73A695C5842EFB98D0315 /* BioRhyme-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DFAE139EB6AE4A7E8DB7B12F /* BioRhyme-Regular.ttf */; };
 /* End PBXBuildFile section */
 
@@ -48,12 +49,13 @@
 		5DCACB8F33CDC322A6C60F78 /* libPods-vquiz.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-vquiz.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = vquiz/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-vquiz-vquizTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vquiz-vquizTests.release.xcconfig"; path = "Target Support Files/Pods-vquiz-vquizTests/Pods-vquiz-vquizTests.release.xcconfig"; sourceTree = "<group>"; };
-		902989E8A68C4412BD4ACBEC /* BioRhyme-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "BioRhyme-Light.ttf"; path = "../src/assets/fonts/BioRhyme-Light.ttf"; sourceTree = "<group>"; };
-		D8831C7C2C0349F0BF830727 /* BioRhyme-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "BioRhyme-ExtraBold.ttf"; path = "../src/assets/fonts/BioRhyme-ExtraBold.ttf"; sourceTree = "<group>"; };
-		DFAE139EB6AE4A7E8DB7B12F /* BioRhyme-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "BioRhyme-Regular.ttf"; path = "../src/assets/fonts/BioRhyme-Regular.ttf"; sourceTree = "<group>"; };
-		E28087066E0B4D5E8AC1C75D /* BioRhyme-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "BioRhyme-Bold.ttf"; path = "../src/assets/fonts/BioRhyme-Bold.ttf"; sourceTree = "<group>"; };
+		902989E8A68C4412BD4ACBEC /* BioRhyme-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "BioRhyme-Light.ttf"; path = "../src/assets/fonts/BioRhyme-Light.ttf"; sourceTree = "<group>"; };
+		B8CD4662283D492A0001A54D /* clicky.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = clicky.wav; path = ../../../Downloads/clicky.wav; sourceTree = "<group>"; };
+		D8831C7C2C0349F0BF830727 /* BioRhyme-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "BioRhyme-ExtraBold.ttf"; path = "../src/assets/fonts/BioRhyme-ExtraBold.ttf"; sourceTree = "<group>"; };
+		DFAE139EB6AE4A7E8DB7B12F /* BioRhyme-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "BioRhyme-Regular.ttf"; path = "../src/assets/fonts/BioRhyme-Regular.ttf"; sourceTree = "<group>"; };
+		E28087066E0B4D5E8AC1C75D /* BioRhyme-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "BioRhyme-Bold.ttf"; path = "../src/assets/fonts/BioRhyme-Bold.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		F28215DEF0AE4BED9EF15B61 /* BioRhyme-ExtraLight.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "BioRhyme-ExtraLight.ttf"; path = "../src/assets/fonts/BioRhyme-ExtraLight.ttf"; sourceTree = "<group>"; };
+		F28215DEF0AE4BED9EF15B61 /* BioRhyme-ExtraLight.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "BioRhyme-ExtraLight.ttf"; path = "../src/assets/fonts/BioRhyme-ExtraLight.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				B8CD4662283D492A0001A54D /* clicky.wav */,
 				13B07FAE1A68108700A75B9A /* vquiz */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* vquizTests */,
@@ -158,7 +161,6 @@
 				DFAE139EB6AE4A7E8DB7B12F /* BioRhyme-Regular.ttf */,
 			);
 			name = Resources;
-			path = "";
 			sourceTree = "<group>";
 		};
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
@@ -271,6 +273,7 @@
 				AA98B8483C7F4A929904F2D8 /* BioRhyme-Bold.ttf in Resources */,
 				03A5F2C7FAA044DDB262B368 /* BioRhyme-ExtraBold.ttf in Resources */,
 				79F7D8DBC3AC4C2E99F0FC27 /* BioRhyme-ExtraLight.ttf in Resources */,
+				B8CD4663283D492A0001A54D /* clicky.wav in Resources */,
 				88E2929487944B3CAB364A83 /* BioRhyme-Light.ttf in Resources */,
 				FFE73A695C5842EFB98D0315 /* BioRhyme-Regular.ttf in Resources */,
 			);

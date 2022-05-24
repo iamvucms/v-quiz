@@ -7,7 +7,9 @@ import Animated, {
   withSpring,
   withTiming,
 } from 'react-native-reanimated';
+import RNSound from 'react-native-sound';
 import styles from './styles';
+import {clickSound} from '../../constants/data';
 
 const BounceButton = ({style, onPress, children}) => {
   const anim = useSharedValue(0);
@@ -17,6 +19,11 @@ const BounceButton = ({style, onPress, children}) => {
   };
   const onButtonPressOut = () => {
     anim.value = withSpring(0);
+  };
+  const onButtonPress = () => {
+    if (clickSound) {
+      clickSound.play();
+    }
     onPress && onPress();
   };
   const buttonStyle = useAnimatedStyle(() => ({
@@ -27,7 +34,10 @@ const BounceButton = ({style, onPress, children}) => {
     ],
   }));
   return (
-    <Pressable onPressIn={onButtonPressIn} onPressOut={onButtonPressOut}>
+    <Pressable
+      onPress={onButtonPress}
+      onPressIn={onButtonPressIn}
+      onPressOut={onButtonPressOut}>
       <Animated.View style={[styles.container, buttonStyle, style]}>
         {children}
       </Animated.View>

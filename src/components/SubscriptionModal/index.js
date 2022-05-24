@@ -75,7 +75,7 @@ const SubscriptionModal = () => {
           <Padding paddingHorizontal={20}>
             <Observer>
               {() => (
-                <VText fontSize={14} color={Colors.warm_gray}>
+                <VText align="center" fontSize={14} color={Colors.warm_gray}>
                   {appStore.subscriptionModalData.description}
                 </VText>
               )}

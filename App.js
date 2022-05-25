@@ -3,6 +3,7 @@ import AppNavigation from './src/navigation';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import {ConfirmModal, SubscriptionModal} from './src/components';
 import {trunk} from './src/appStore';
+import {PortalProvider} from '@gorhom/portal';
 
 const App = () => {
   const [loaded, setLoaded] = React.useState(false);
@@ -13,9 +14,11 @@ const App = () => {
   }, []);
   return (
     <SafeAreaProvider>
-      <AppNavigation />
-      <SubscriptionModal />
-      <ConfirmModal />
+      <PortalProvider>
+        <AppNavigation />
+        <SubscriptionModal />
+        <ConfirmModal />
+      </PortalProvider>
     </SafeAreaProvider>
   );
 };

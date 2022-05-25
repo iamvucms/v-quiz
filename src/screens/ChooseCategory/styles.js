@@ -8,6 +8,7 @@ export default StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     paddingRight: 10,
+    justifyContent: 'space-between',
   },
   btnBack: {
     padding: 10,

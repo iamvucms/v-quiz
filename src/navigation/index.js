@@ -6,6 +6,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {
   About,
   ChooseCategory,
+  EndGame,
   GamePlay,
   Home,
   Onboarding,
@@ -25,6 +26,7 @@ const HomeStack = () => {
         component={Home}
       />
       <Stack.Screen name="GamePlay" component={GamePlay} />
+      <Stack.Screen name="EndGame" component={EndGame} />
       <Stack.Screen name="Setting" component={Setting} />
       <Stack.Screen name="ChooseCategory" component={ChooseCategory} />
       <Stack.Screen name="About" component={About} />

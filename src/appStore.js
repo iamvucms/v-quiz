@@ -1,10 +1,11 @@
-import {action, makeObservable, observable} from 'mobx';
+import {action, flow, flowResult, makeObservable, observable} from 'mobx';
 import {AsyncTrunk} from 'mobx-sync';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {ignorePersistNodes} from './constants';
-import {clickSound} from './constants/data';
+import {clickSound, baseUrl, Categories} from './constants/data';
+import axios from 'axios';
 class AppStore {
-  premium = false;
+  premium = true;
   onboardingComplete = false;
   subscriptionModal = false;
   subscriptionModalData = {};
@@ -13,6 +14,8 @@ class AppStore {
   soundVolume = 100;
   numOfQuestions = 10;
   questionType = 'multiple';
+  questions = [];
+  loadingQuestion = false;
   constructor() {
     ignorePersistNodes(this, [
       'subscriptionModal',
@@ -30,6 +33,8 @@ class AppStore {
       numOfQuestions: observable,
       soundVolume: observable,
       questionType: observable,
+      questions: observable,
+      loadingQuestion: observable,
       setPremium: action,
       setOnboardingComplete: action,
       setSubscriptionModal: action,
@@ -37,6 +42,7 @@ class AppStore {
       setSoundVolume: action,
       setNumOfQuestions: action,
       setQuestionType: action,
+      getQuestions: flow,
     });
   }
   setPremium(premium) {
@@ -76,6 +82,19 @@ class AppStore {
   }
   setQuestionType(questionType) {
     this.questionType = questionType;
+  }
+  *getQuestions(categoryId = Categories[0].id, difficulty = 'easy') {
+    try {
+      this.questions = [];
+      this.loadingQuestion = true;
+      const response = yield axios.get(
+        `${baseUrl}/questions?type=${this.questionType}&limit=${this.numOfQuestions}&difficulty=${difficulty}&categoryId=${categoryId}`,
+      );
+      this.questions = response.data.results;
+      this.loadingQuestion = false;
+    } catch (e) {
+      console.log({getQuestions: e});
+    }
   }
 }
 export default appStore = new AppStore();

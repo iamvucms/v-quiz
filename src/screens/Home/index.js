@@ -43,7 +43,11 @@ const Home = ({navigation}) => {
       </View>
       <View style={styles.mainMenu}>
         <BounceButton
-          onPress={() => navigation.navigate('ChooseCategory')}
+          onPress={() =>
+            navigation.navigate('ChooseCategory', {
+              difficulty: state.gameMode.toLowerCase(),
+            })
+          }
           style={styles.btnMenu}>
           <VText fontWeight={700} fontSize={20} color={Colors.white}>
             Play Game

@@ -1,9 +1,15 @@
-import {FlatList, Image, Pressable, TouchableOpacity, View} from 'react-native';
+import {FlatList, Pressable, View} from 'react-native';
 import React from 'react';
 import styles from './styles';
-import {BgScreen, BounceButton, Padding, VText} from '../../components/';
+import {
+  BgScreen,
+  BounceButton,
+  ModalLoading,
+  Padding,
+  VText,
+} from '../../components/';
 import {Colors} from '../../constants';
-import {ArrowLeftSvg} from '../../assets/svg';
+import {ArrowLeftSvg, SettingSvg} from '../../assets/svg';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {Categories, clickSound} from '../../constants/data';
 import Animated, {
@@ -19,13 +25,18 @@ import Animated, {
   withSpring,
   withTiming,
 } from 'react-native-reanimated';
-import RNSound from 'react-native-sound';
-const ChooseCategory = ({navigation}) => {
+import {flow, flowResult} from 'mobx';
+import appStore from '../../appStore';
+import {Observer} from 'mobx-react-lite';
+const ChooseCategory = ({navigation, route}) => {
   const {top, bottom} = useSafeAreaInsets();
+  const {difficulty} = route.params;
   const renderCategoryItem = ({item, index}) => {
-    const onPress = () => {
+    const onPress = async () => {
+      await flowResult(appStore.getQuestions(item.id, difficulty));
       navigation.navigate('GamePlay', {
-        category: item,
+        category: item.id,
+        difficulty: difficulty,
       });
     };
     const isLeft = index % 2 === 0;
@@ -46,6 +57,9 @@ const ChooseCategory = ({navigation}) => {
       </Animated.View>
     );
   };
+  const onSettingPress = () => {
+    navigation.navigate('Setting');
+  };
   const onBackPress = () => {
     navigation.goBack();
   };
@@ -60,6 +74,9 @@ const ChooseCategory = ({navigation}) => {
         <VText fontSize="h5" fontWeight={700} color={Colors.secondary}>
           Choose a Category
         </VText>
+        <BounceButton onPress={onSettingPress} style={styles.btnBack}>
+          <SettingSvg size={28} color={Colors.white} />
+        </BounceButton>
       </View>
       <View style={styles.categoriesContainer}>
         <FlatList
@@ -71,6 +88,7 @@ const ChooseCategory = ({navigation}) => {
           ListFooterComponent={<Padding paddingBottom={bottom} />}
         />
       </View>
+      <Observer>{() => appStore.loadingQuestion && <ModalLoading />}</Observer>
     </View>
   );
 };

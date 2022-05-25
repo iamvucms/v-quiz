@@ -11,7 +11,7 @@ import RNSound from 'react-native-sound';
 import styles from './styles';
 import {clickSound} from '../../constants/data';
 
-const BounceButton = ({style, onPress, children}) => {
+const BounceButton = ({style, onPress, children, disabled}) => {
   const anim = useSharedValue(0);
   const onButtonPressIn = () => {
     anim.value = 0;
@@ -35,6 +35,7 @@ const BounceButton = ({style, onPress, children}) => {
   }));
   return (
     <Pressable
+      disabled={disabled}
       onPress={onButtonPress}
       onPressIn={onButtonPressIn}
       onPressOut={onButtonPressOut}>

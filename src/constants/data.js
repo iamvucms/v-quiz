@@ -213,3 +213,5 @@ export const clickSound = new RNSound(
     }
   },
 );
+export const TimeOut = 20;
+export const baseUrl = 'http://localhost:3000/api';

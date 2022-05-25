@@ -136,10 +136,10 @@ const Setting = ({navigation}) => {
             <Observer>
               {() => (
                 <BounceButton
-                  onPress={() => state.setType('true_false')}
+                  onPress={() => state.setType('boolean')}
                   style={[
                     styles.questionType,
-                    state.type === 'true_false' && {
+                    state.type === 'boolean' && {
                       borderColor: Colors.secondary,
                     },
                   ]}>

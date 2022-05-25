@@ -5,3 +5,4 @@ export {default as BounceButton} from './BounceButton';
 export {default as AppLogo} from './AppLogo';
 export {default as ConfirmModal} from './ConfirmModal';
 export {default as SubscriptionModal} from './SubscriptionModal';
+export {default as ModalLoading} from './ModalLoading';

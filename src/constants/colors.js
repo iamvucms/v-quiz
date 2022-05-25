@@ -10,6 +10,7 @@ export const Colors = {
   dangerLight: '#ff5f5f',
   success_80: '#00ff0080',
   success: '#00ff00',
+  successDark: '#118215',
   violet_light: '#e6e6ff',
   warm_gray: '#8c8c8c',
   border: '#e6e6e6',

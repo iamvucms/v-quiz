@@ -1,4 +1,3 @@
-import {BlurView} from '@react-native-community/blur';
 import React, {useEffect} from 'react';
 import {Image, View} from 'react-native';
 import Animated, {
@@ -86,10 +85,6 @@ const BgScreen = ({bgColor = Colors.primary}) => {
   const move3Styles = useAnimatedStyle(() => {
     return {
       transform: [
-        // {
-        //   rotate: interpolate(rotateAnim.value, [0, 1], ['0deg', '360deg'])
-        // }
-
         {
           translateX: moveX3Anim.value,
         },

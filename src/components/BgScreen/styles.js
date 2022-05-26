@@ -6,10 +6,6 @@ export default StyleSheet.create({
     zIndex: -99,
     backgroundColor: Colors.primary,
   },
-  blurView: {
-    ...StyleSheet.absoluteFillObject,
-    zIndex: 999,
-  },
   shape: {
     position: 'absolute',
     zIndex: -1,

@@ -18,6 +18,7 @@ class AppStore {
   loadingQuestion = false;
   constructor() {
     ignorePersistNodes(this, [
+      'onboardingComplete',
       'subscriptionModal',
       'confirmModal',
       'subscriptionModalData',
@@ -88,7 +89,11 @@ class AppStore {
       this.questions = [];
       this.loadingQuestion = true;
       const response = yield axios.get(
-        `${baseUrl}/questions?type=${this.questionType}&limit=${this.numOfQuestions}&difficulty=${difficulty}&categoryId=${categoryId}`,
+        `https://opentdb.com/api.php?type=${
+          this.questionType === 'both' ? '' : this.questionType
+        }&amount=${
+          this.numOfQuestions
+        }&difficulty=${difficulty}&category=${categoryId}`,
       );
       this.questions = response.data.results;
       this.loadingQuestion = false;

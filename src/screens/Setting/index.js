@@ -15,7 +15,7 @@ const Setting = ({navigation}) => {
     numQuestions: appStore.numOfQuestions,
     type: appStore.questionType,
     setVolume: e => {
-      state.volume = e;
+      state.volume = e[0];
     },
     setNumQuestions: e => {
       if (!appStore.premium) {
@@ -44,7 +44,7 @@ const Setting = ({navigation}) => {
     navigation.goBack();
   };
   const onSavePress = () => {
-    appStore.setSoundVolume(state.volume);
+    appStore.setSoundVolume([state.volume]);
     appStore.setNumOfQuestions(state.numQuestions);
     appStore.setQuestionType(state.type);
     navigation.goBack();
@@ -89,7 +89,7 @@ const Setting = ({navigation}) => {
                   color={Colors.secondary}
                   fontWeight={700}
                   lineHeightRatio={1.3}>
-                  {appStore.numOfQuestions}
+                  {state.numQuestions}
                 </VText>
               )}
             </Observer>

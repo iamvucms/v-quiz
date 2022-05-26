@@ -288,7 +288,12 @@ const GamePlay = ({navigation}) => {
                 </Observer>
               </View>
             ) : (
-              <View style={styles.booleanContainer}></View>
+              <View style={styles.booleanContainer}>
+                {/* UI for boolean question here */}
+                <Observer>
+                  {() => state.currentAnswers.map(renderMultipleAnswer)}
+                </Observer>
+              </View>
             )
           }
         </Observer>

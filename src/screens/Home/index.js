@@ -35,6 +35,7 @@ const Home = ({navigation}) => {
       }
     },
   }));
+  appStore.setPremium(false);
   return (
     <View style={styles.container}>
       <BgScreen />
